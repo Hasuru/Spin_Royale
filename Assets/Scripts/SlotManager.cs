@@ -48,7 +48,7 @@ public class SlotManager : MonoBehaviour
             currentMultiplier = multipliers[cnt];
             consecutive = false;
             Update_Credit(-bet);
-            JackpotText.text = "You Lost!\nCurrent Multiplier: " + currentMultiplier + "x";
+            JackpotText.text = "You Lost!\nMultiplier: " + currentMultiplier + "x";
             return;
         }
 
@@ -56,7 +56,7 @@ public class SlotManager : MonoBehaviour
         else currentMultiplier = multipliers[cnt];
         consecutive = true;
         Update_Credit(currentMultiplier * bet);
-        JackpotText.text = "You Won " + currentMultiplier * bet + "!\nCurrent Multiplier: " + currentMultiplier + "x";
+        JackpotText.text = "You Won " + currentMultiplier * bet + "!\nMultiplier: " + currentMultiplier + "x";
     }
 
     public void Update_Credit(int value)
@@ -76,7 +76,7 @@ public class SlotManager : MonoBehaviour
     {
         if (bet <= 0)
         {
-            JackpotText.text = "Invalid Bet Value!\nCurrent Multiplier: " + currentMultiplier + "x";
+            JackpotText.text = "Invalid Bet Value!\nMultiplier: " + currentMultiplier + "x";
             return false;
         }
 
@@ -87,7 +87,7 @@ public class SlotManager : MonoBehaviour
     {
         if (credit == 0 || credit - bet < 0)
         {
-            JackpotText.text = "Insuficient Funds!\nCurrent Multiplier: " + currentMultiplier + "x";
+            JackpotText.text = "Insuficient Funds!\nMultiplier: " + currentMultiplier + "x";
             return false;
         }
 
